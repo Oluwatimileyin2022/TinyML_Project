@@ -1,0 +1,31 @@
+.top-half {
+    position: relative;
+    height: calc(100vh - 25px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+.top-half::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../TinyML_Project/assets/Machine-learning-logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  
+#front-image {
+    font-size: 60px;
+    font-weight: bolder;
+    color: black;
+  }
+  
