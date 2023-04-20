@@ -58,15 +58,20 @@
 
     <section id="background-story" class="background-story">
       <h1 class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">The Background</h1>
-      <p id="project-info">A project about the use of TinyML for monitoring and detecting structural faults.</p>
+      <p id="project-info">A project about the use of TinyML for monitoring and detecting structural faults.This group project (GP) aims to develop and deploy a TinyML in an embedded device like raspberry pi to evaluate and monitor the condition of high-value assets but specifically the bolt looseness. High-value assets can be defined as any asset that is critical to a business.
+    </p>
     </section>
 
     <section id="results" class="results">
       <h1 class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary result-title">Results</h1>
       <div class="trafficContainer">
         <div id="traffic-light">
-          <input type="radio" name="traffic-light-color" id="red" value="red" />
-          <input type="radio" name="traffic-light-color" id="green" value="green" />
+          <input type="radio" name="traffic-light-color" id="red" value="red" checked disabled />
+          <input type="radio" name="traffic-light-color" id="green" value="green" disabled/>
+        </div>
+        <div class="traffic-status">
+          <h3>Unhealthy</h3>
+          <h3>Healthy</h3>
         </div>
       </div>
     </section>
