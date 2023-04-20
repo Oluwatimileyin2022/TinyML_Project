@@ -8,7 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../TinyML_Project/style.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
     <script src="script.js"></script>
     <title>TinyML</title>
 </head>
@@ -25,17 +26,17 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Background Story</a>
+              <a class="nav-link" href="#background-story">Background Story</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
                 Group Members
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Jiawei</a>
-                <a class="dropdown-item" href="#">Tianyi</a>
-                <a class="dropdown-item" href="#">Austin</a>
-                <a class="dropdown-item" href="#">Mikhil</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <a class="dropdown-item" href="#jiaweiLi">Jiawei</a>
+                <a class="dropdown-item" href="#tianyiLi">Tianyi</a>
+                <a class="dropdown-item" href="#austinOladoye">Austin</a>
+                <a class="dropdown-item" href="#mikhilShah">Mikhil</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Other options</a>
               </div>
@@ -55,55 +56,78 @@
         <h1 id="front-image"> The Power of TinyML in Structural Analysis</h1>
     </section>
 
-    <section class="background-story">
+    <section id="background-story" class="background-story">
       <h1 class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">The Background</h1>
-      <p id="project-info">A project about the use of TinyML for monitoring and detecting structural faults.</p>
+      <p id="project-info">A project about the use of TinyML for monitoring and detecting structural faults.This group project (GP) aims to develop and deploy a TinyML in an embedded device like raspberry pi to evaluate and monitor the condition of high-value assets but specifically the bolt looseness. High-value assets can be defined as any asset that is critical to a business.
+    </p>
     </section>
 
-    <section class="group-members">
+    <section id="results" class="results">
+      <h1 class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary result-title">Results</h1>
+      <div class="trafficContainer">
+        <div id="traffic-light">
+          <input type="radio" name="traffic-light-color" id="red" value="red" checked disabled />
+          <input type="radio" name="traffic-light-color" id="green" value="green" disabled/>
+        </div>
+        <div class="traffic-status">
+          <h3>Unhealthy</h3>
+          <h3>Healthy</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="group-members" class="group-members">
       <h1 class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">The Group Members</h1>
       <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
-          <div class="card">
-            <img src="../TinyML_Project/assets/li-jiawei.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Jaiwei Li</h5>
-              <p class="card-text">Jiawei studies Aerospace Manufacturing MSc at Cranfield University.
-                His previous education was at Nanjing University of Information Science and Technology, China, where he studied Computer Science and Technology. 
-              </p>
+          <div id="jiaweiLi">
+            <div class="card">
+              <img src="./assets/li-jiawei.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Jaiwei Li</h5>
+                <p class="card-text">Jiawei studies Aerospace Manufacturing MSc at Cranfield University.
+                  His previous education was at Nanjing University of Information Science and Technology, China, where he studied Computer Science and Technology. 
+                </p>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="col">
+          <div id="tianyiLi">
+            <div class="card">
+              <img src="./assets/Li-Tianyi.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Tianyi Li</h5>
+                <p class="card-text">Tianyi studies Aerospace Manufacturing MSc at Cranfield University.
+                  His previous education was at Northeastern University, China, where he studied Mechanical Engineering. 
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
-            <img src="../TinyML_Project/assets/Li-Tianyi.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tianyi Li</h5>
-              <p class="card-text">Tianyi studies Aerospace Manufacturing MSc at Cranfield University.
-                His previous education was at Northeastern University, China, where he studied Mechanical Engineering. 
-              </p>
+          <div id="austinOladoye">
+            <div class="card">
+              <img src="./assets/Oladoye-Austin.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Austin Oladoye</h5>
+                <p class="card-text">Austin studies Management and Information Systems MSc at Cranfied University.
+                  His previous education was at the University of Surrey, UK, where he studied Aerospace Engineering.
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
-            <img src="../TinyML_Project/assets/Oladoye-Austin.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Austin Oladoye</h5>
-              <p class="card-text">Austin studies Management and Information Systems MSc at Cranfied University.
-                His previous education was at the University of Surrey, UK, where he studied Aerospace Engineering.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Mikhil Shah</h5>
-              <p class="card-text">Mikhil studies Engineering and Mangement of Manufacturing Systems MSc at Cranfield University.
-                His previous education was at Conventry University, UK, where he studies Ethical Hacking and Cybersecurity. 
-              </p>
+          <div id="mikhilShah">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Mikhil Shah</h5>
+                <p class="card-text">Mikhil studies Engineering and Mangement of Manufacturing Systems MSc at Cranfield University.
+                  His previous education was at Conventry University, UK, where he studies Ethical Hacking and Cybersecurity. 
+                </p>
+              </div>
             </div>
           </div>
         </div>
